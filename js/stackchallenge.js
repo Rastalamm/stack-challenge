@@ -1,9 +1,4 @@
-/**
- * @name  linkedListGenerator
- * @description  Main Module
- * @return {Object} an object exposing methods to be used to manipulate a linked list
- */
-(function linkedList(){
+var linkedList = (function(){
 
   var head = null;
   var tail = null;
@@ -124,5 +119,23 @@
       }
     return false;
     }
+
 })();
 
+
+
+
+document.getElementById('save').addEventListener("click", function(){
+
+linkedList.add(document.getElementById("input").value);
+
+
+document.getElementById("input").value = "";
+
+});
+
+document.getElementById('dump').addEventListener("click", function(){
+  document.getElementById('output').innerHTML = 'not yet';
+
+
+});
