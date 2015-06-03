@@ -13,6 +13,7 @@ var linkedList = (function(){
   };
 
   function _getHead(){
+    console.log(head);
     return head;
   }
 
@@ -127,15 +128,27 @@ var linkedList = (function(){
 
 document.getElementById('save').addEventListener("click", function(){
 
-linkedList.add(document.getElementById("input").value);
+var x = linkedList.add(document.getElementById("input").value);
 
-
+console.log(x);
 document.getElementById("input").value = "";
 
 });
 
+var count= 0;
+
+
 document.getElementById('dump').addEventListener("click", function(){
-  document.getElementById('output').innerHTML = 'not yet';
+console.log('out of loop');
+
+
+var node = linkedList.getHead();
+while(node !== null){
+  console.log('inside of loop');
+  document.getElementById('output').innerHTML += (node.value + '<br />');
+  node = node.next;
+
+}
 
 
 });
